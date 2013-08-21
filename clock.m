@@ -66,10 +66,10 @@
 	NSImage				*bit;
 	NSPoint				origin;
 	NSRect				frame;
-	SInt32				hour = [date hourOfDay];
-	SInt32				minute = [date minuteOfHour];
-	SInt32				secs = [date secondOfMinute];
-	SInt32				mask;
+	NSUInteger			hour = [date hourOfDay];
+	NSUInteger			minute = [date minuteOfHour];
+	NSUInteger			secs = [date secondOfMinute];
+	NSUInteger			mask;
 
 	if (sShine == nil) {
 		sShine = [[NSGradient alloc] initWithColorsAndLocations:
@@ -90,10 +90,8 @@
 		[[NSColor colorWithCalibratedHue: 0.0 saturation: 0.0 brightness: 0.1 alpha: 1.0] set];
 		[framePath fill];
 		
-		// seperated this out because I was thinking of placing the shine on top of the "lights"
-		// ended up liking it better below the lights... for now.
-		
-		[sShine drawInBezierPath: framePath angle: 280.0];
+// remove shine
+//		[sShine drawInBezierPath: framePath angle: 280.0];
 
 		origin.x = 0;	origin.y = 0;
 		// hour tens
